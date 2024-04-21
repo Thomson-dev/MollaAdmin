@@ -5,6 +5,8 @@ import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+
 import { CiEdit } from "react-icons/ci";
 import { BsBagCheckFill } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -45,11 +47,20 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState<boolean>(false);
   return (
     <div className="">
-      <div className="p-5">
-        <RxHamburgerMenu
-          className="text-2xl text-white md:hidden"
-          onClick={() => setSidebar((prevSidebar) => !prevSidebar)}
-        />
+      <div className="border-b border-slate-600  shadow-sm flex md:justify-between justify-between  p-2 px-4 items-center">
+        <div className="flex items-center space-x-5">
+          <RxHamburgerMenu
+            className="text-2xl text-white md:hidden"
+            onClick={() => setSidebar((prevSidebar) => !prevSidebar)}
+          />
+           <FaSearch className="text-xl text-slate-500" />
+        </div>
+       
+
+        <div className="text-slate-300">
+          <p>Admin</p>
+          <h3 className="text-lg font-bold">Thomson</h3>
+        </div>
       </div>
       <div
         className={`w-[270px] h-[100vh] md:hidden block z-40 shadow-lg  fixed top-0 left-0 transition-left duration-500 ease-in-out bg-slate-700 ${

@@ -7,24 +7,23 @@ import ProductList from "./Screens/ProductList.tsx";
 
 function App() {
   return (
-    <div className="bg-slate-700 w-full h-screen flex">
+    <div className="bg-[#1F2937]  w-full  ">
       <Router>
-      <div className="flex flex-row">
-        <div className="md:w-[20%] hidden md:block  ">
-          <Sidebar />
-        </div>
+        <div className="flex  flex-row">
+          <div className=" hidden w-[20%] md:block   ">
+            <Sidebar />
+          </div>
 
-        <div className="md:w-[80%] w-[100%]">
-          
-            <Routes>
+          <div className="flex-1 w-[80%]" >
+            <Routes >
               <Route path="/" element={<Dashboard />} />
               <Route path="/product-list" element={<ProductList />} />
             </Routes>
-         
+          
+
+          </div>
         </div>
-      </div>
       </Router>
-     
     </div>
   );
 }
