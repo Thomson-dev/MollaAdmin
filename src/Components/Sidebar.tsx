@@ -27,7 +27,7 @@ const Sidebar = () => {
     {
       id: 4,
       name: "New Product ",
-      url: "/",
+      url: "/new-product",
       icon: <MdAddShoppingCart />,
     },
 
@@ -41,7 +41,7 @@ const Sidebar = () => {
     // add more items as needed
   ];
   return (
-    <div className="shadow-md h-screen fixed lg:px-4 md:px-2  ">
+    <div className="shadow-md h-screen w-full fixed lg:px-4 md:px-2  ">
       <div className="flex py-4 space-x-3 text-white items-center ">
         <MdOutlineShoppingCart className="text-2xl" />
         <h1 className="text-xl">Mollar Store</h1>

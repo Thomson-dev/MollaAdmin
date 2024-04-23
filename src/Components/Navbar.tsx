@@ -31,7 +31,7 @@ const Navbar = () => {
     {
       id: 4,
       name: "New Product ",
-      url: "/",
+      url: "/new-product",
       icon: <MdAddShoppingCart />,
     },
 

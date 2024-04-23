@@ -4,7 +4,7 @@ type Props = {};
 
 const ProductList = (props: Props) => {
   return (
-    <div className="">
+    <div className="h-screen">
       <h1>ProductList</h1>
      
     </div>
