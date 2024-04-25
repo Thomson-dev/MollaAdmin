@@ -11,7 +11,7 @@ function App() {
     <div className="bg-[#1F2937]  w-full  ">
       <Router>
         <div className="flex bg-[#111827] flex-row">
-          <div className=" hidden w-[20%] md:block   ">
+          <div className=" hidden w-[20%]  md:block   ">
             <Sidebar />
           </div>
 

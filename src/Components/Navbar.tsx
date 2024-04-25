@@ -6,6 +6,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import photo from "../asserts/photo.jpg";
 
 import { CiEdit } from "react-icons/ci";
 import { BsBagCheckFill } from "react-icons/bs";
@@ -53,13 +54,21 @@ const Navbar = () => {
             className="text-2xl text-white md:hidden"
             onClick={() => setSidebar((prevSidebar) => !prevSidebar)}
           />
-           <FaSearch className="text-xl text-slate-500" />
+          <FaSearch className="text-xl text-slate-500" />
         </div>
-       
 
-        <div className="text-slate-300">
-          <p>Admin</p>
-          <h3 className="text-lg font-bold">Thomson</h3>
+        <div className="text-slate-300 flex space-x-2">
+          <div className="">
+            <img
+              src={photo}
+              className="w-[50px] h-[50px] rounded-full "
+              alt=""
+            />
+          </div>
+          <div className="">
+            <p>Admin</p>
+            <h3 className="text-lg font-bold">Thomson</h3>
+          </div>
         </div>
       </div>
       <div
