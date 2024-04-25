@@ -17,7 +17,7 @@ const NewProduct = (props: Props) => {
     <div className="border bg-[#1F2937]  shadow-xl border-[#1F2937] ">
       <Navbar />
 
-      <div className="px-8">
+      <div className="md:px-8 px-6">
         <h3 className="text-white font-bold  text-2xl">Add New Product</h3>
 
         <div className="flex md:flex-row flex-col">
