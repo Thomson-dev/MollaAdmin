@@ -17,7 +17,7 @@ const NewProduct = (props: Props) => {
     <div className="border bg-[#1F2937]  shadow-xl border-[#1F2937] ">
       <Navbar />
 
-      <div className="md:px-8 px-6">
+      <div className="md:px-8 px-6 pt-4">
         <h3 className="text-white font-bold  text-2xl">Add New Product</h3>
 
         <div className="flex md:flex-row flex-col">
@@ -132,7 +132,7 @@ const NewProduct = (props: Props) => {
             <p className="text-white text-sm">
               Add or change image for the product
             </p>
-            <form className="file-upload-form px-5 mt-5">
+            <form className="file-upload-form  px-5 mt-5">
               <label className="file-upload-label">
                 <div className="file-upload-design">
                   <svg viewBox="0 0 640 512" height="1em">
@@ -152,10 +152,10 @@ const NewProduct = (props: Props) => {
       <div className="footer sticky bottom-0 border-[#313c4b]   mt-6 z-40 border  w-full py-4 ">
         <div className="flex  justify-end ">
           <div className="flex space-x-4 px-6">
-            <button className="bg-[#374151] w-20 py-1 rounded">Discard</button>
+            <button className="bg-[#374151] w-20 py-2 rounded">Discard</button>
 
             <div className="flex items-center">
-              <button className="bg-[#4F46E5] px-5 rounded py-1 flex items-center">
+              <button className="bg-[#4F46E5] px-5 rounded py-2 flex items-center">
                 <IoIosSave />
                 Save
               </button>
