@@ -72,12 +72,12 @@ const ProductList = (props: Props) => {
                           scope="row"
                           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
-                          <img src={product.image} className=" h-28 w-28" alt="" />
+                          <img src={product.image} className=" h-auto max-w-full md:w-28 md:h-28" alt="" />
                         </th>
-                        <td className="px-3 py-4">{product.category}</td>
-                        <td className="px-3 py-4">{product.stock}</td>
-                        <td className="px-3 py-4">Dilivered</td>
-                        <td className="px-3 py-4">${product.price}</td>
+                        <td className="px-3 py-3">{product.category}</td>
+                        <td className="px-3 py-3">{product.stock}</td>
+                        <td className="px-3 py-3">Dilivered</td>
+                        <td className="px-3 py-3">${product.price}</td>
                       </tr>
                     ))}
                 </tbody>

@@ -17,7 +17,7 @@ const NewProduct = (props: Props) => {
     <div className="border bg-[#1F2937]  shadow-xl border-[#1F2937] ">
       <Navbar />
 
-      <div className="md:px-8 px-6 pt-4">
+      <div className="md:px-8 px-3 pt-4">
         <h3 className="text-white font-bold  text-2xl">Add New Product</h3>
 
         <div className="flex md:flex-row flex-col">
@@ -149,7 +149,7 @@ const NewProduct = (props: Props) => {
         </div>
       </div>
 
-      <div className="footer sticky bottom-0 border-[#313c4b]   mt-6 z-40 border  w-full py-4 ">
+      <div className="footer  mt-6   w-full py-4 ">
         <div className="flex  justify-end ">
           <div className="flex space-x-4 px-6">
             <button className="bg-[#374151] w-20 py-2 rounded">Discard</button>
