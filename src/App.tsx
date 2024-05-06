@@ -5,6 +5,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductList from "./Screens/ProductList.tsx";
 import NewProduct from "./Screens/NewProduct.tsx";
+import ProductEdit from "./Screens/ProductEdit.tsx";
+import Settings from "./Screens/Settings.tsx";
 
 function App() {
   return (
@@ -15,14 +17,14 @@ function App() {
             <Sidebar />
           </div>
 
-          <div className="flex-1 bg-[#1F2937]  w-[80%]" >
-            <Routes >
+          <div className="flex-1 bg-[#1F2937]  w-[80%]">
+            <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/product-list" element={<ProductList />} />
-              <Route path="/new-product" element={<NewProduct/>} />
+              <Route path="/new-product" element={<NewProduct />} />
+              <Route path="/product-edit" element={<ProductEdit />} />
+              <Route path="/Settings" element={<Settings />} />
             </Routes>
-          
-
           </div>
         </div>
       </Router>

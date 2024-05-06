@@ -18,7 +18,7 @@ const NewProduct = (props: Props) => {
       <Navbar />
 
       <div className="md:px-8 px-3 pt-4">
-        <h3 className="text-white font-bold  text-2xl">Add New Product</h3>
+        <h3 className="text-white font-bold  text-xl">Add New Product</h3>
 
         <div className="flex md:flex-row flex-col">
           <div className="md:w-[60%] w-[100%]">
@@ -125,14 +125,16 @@ const NewProduct = (props: Props) => {
             </form>
           </div>
 
-          <div className="md:w-[40%] w-[100%]   px-5 ">
+          <div className="md:w-[40%] w-[100%]  flex  flex-col items-center   md:px-5 ">
+            <div className="">
             <h2 className="text-white  text-lg pt-5 font-semibold">
               Add Image:
             </h2>
             <p className="text-white text-sm">
               Add or change image for the product
             </p>
-            <form className="file-upload-form  px-5 mt-5">
+            </div>
+            <form className="file-upload-form  flex justify-center items-center mt-5">
               <label className="file-upload-label">
                 <div className="file-upload-design">
                   <svg viewBox="0 0 640 512" height="1em">

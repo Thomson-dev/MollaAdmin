@@ -21,7 +21,7 @@ const Sidebar = () => {
     {
       id: 3,
       name: "Product Edit",
-      url: "/",
+      url: "/product-edit",
       icon: <CiEdit />,
     },
     {
@@ -37,7 +37,7 @@ const Sidebar = () => {
       url: "/",
       icon: <BsBagCheckFill />,
     },
-    { id: 6, name: "Settings", url: "/", icon: <CiSettings /> },
+    { id: 6, name: "Settings", url: "/Settings", icon: <CiSettings /> },
     // add more items as needed
   ];
   return (
@@ -50,7 +50,7 @@ const Sidebar = () => {
         {sidebarItems.map((item) => (
           <div
             key={item.id}
-            className="flex space-x-2   items-center cursor-pointer"
+            className="flex space-x-2 hover:bg-[#29303D] py-1 rounded-sm  items-center cursor-pointer"
           >
             <h6 className="text-2xl">{item.icon}</h6>
             <h1 className="text-lg">

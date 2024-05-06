@@ -26,7 +26,7 @@ const Navbar = () => {
     {
       id: 3,
       name: "Product Edit",
-      url: "/",
+      url: "/product-edit",
       icon: <CiEdit />,
     },
     {
@@ -42,7 +42,7 @@ const Navbar = () => {
       url: "/",
       icon: <BsBagCheckFill />,
     },
-    { id: 6, name: "Settings", url: "/", icon: <CiSettings /> },
+    { id: 6, name: "Settings", url: "/Settings", icon: <CiSettings /> },
     // add more items as needed
   ];
   const [sidebar, setSidebar] = useState<boolean>(false);

@@ -3,6 +3,8 @@ import Navbar from "../Components/Navbar.tsx";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../features/Products/getproductsSlice.ts";
 import Preloader from "../Components/Loader/Preloader.tsx";
+import { MdDelete } from "react-icons/md";
+
 type Props = {};
 
 const ProductList = (props: Props) => {
@@ -23,10 +25,10 @@ const ProductList = (props: Props) => {
         <div className="md:space-x-5 space-y-5 md:space-y-0 flex  md:flex-row flex-col">
           <input
             type="text"
-            className="rounded py-2 md:py-1 bg-[#1F2937] border pl-3 text-white border-slate-400  "
+            className="rounded py-1 bg-[#1F2937] border pl-3 text-white border-slate-400  "
             placeholder="Search Product "
           />
-          <button className="py-2 md:py-1 px-3 text-white rounded text-base bg-[#6366F1]">
+          <button className="py-1 px-3 text-white rounded text-base bg-[#6366F1]">
             Add Products
           </button>
         </div>
@@ -36,6 +38,10 @@ const ProductList = (props: Props) => {
         <div>
           <Preloader />
         </div>
+      ) : error ? (
+        <div className="bg-[#1F2937] h-screen">
+          <h1 className="text-center mb-6">Error: {error}</h1>
+        </div>
       ) : (
         <div>
           <div className="md:px-6 relative overflow-x-auto ">
@@ -43,22 +49,23 @@ const ProductList = (props: Props) => {
               <table className="w-full text-sm text-left rtl:text-right text-white ">
                 <thead className="md:text-sm text-xs text-white uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
-                    <th scope="col" className="px-6 text-white py-3">
+                    <th scope="col" className="px-3 text-white py-3">
                       Product name
                     </th>
-                    <th scope="col" className="px-6 text-white py-3">
+                    <th scope="col" className="px-3 text-white py-3">
                       Category
                     </th>
-                    <th scope="col" className="px-6 text-white py-3">
+                    <th scope="col" className="px-3 text-white py-3">
                       Quantity
                     </th>
-                    <th scope="col" className="px-6 text-white py-3">
+                    <th scope="col" className="px-3 text-white py-3">
                       Stutus
                     </th>
 
-                    <th scope="col" className="px-6 text-white py-3">
+                    <th scope="col" className="px-3 text-white py-3">
                       price
                     </th>
+                    <th scope="col" className="px-3 text-white py-3"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -72,12 +79,19 @@ const ProductList = (props: Props) => {
                           scope="row"
                           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                         >
-                          <img src={product.image} className=" h-auto max-w-full md:w-28 md:h-28" alt="" />
+                          <img
+                            src={product.image}
+                            className=" h-auto max-w-full md:w-28 md:h-28"
+                            alt=""
+                          />
                         </th>
                         <td className="px-3 py-3">{product.category}</td>
                         <td className="px-3 py-3">{product.stock}</td>
                         <td className="px-3 py-3">Dilivered</td>
                         <td className="px-3 py-3">${product.price}</td>
+                        <td className="px-3 py-3">
+                          <MdDelete className="text-red-500 text-xl" />
+                        </td>
                       </tr>
                     ))}
                 </tbody>
