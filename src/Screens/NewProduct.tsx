@@ -157,8 +157,8 @@ const NewProduct = (props: Props) => {
             <button className="bg-[#374151] w-20 py-2 rounded">Discard</button>
 
             <div className="flex items-center">
-              <button className="bg-[#4F46E5] px-5 rounded py-2 flex items-center">
-                <IoIosSave />
+              <button className="bg-[#4F46E5] px-5 text-white font-semibold rounded py-2 flex items-center">
+                <IoIosSave className = 'text-white' />
                 Save
               </button>
             </div>

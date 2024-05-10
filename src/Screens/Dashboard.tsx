@@ -170,7 +170,7 @@ const Dashboard = (props: Props) => {
         })}
       </div>
 
-      <div className="grah flex flex-col md:flex-row gap-3 mb-5 px-5 md:px-10">
+      <div className="grah flex flex-col   md:flex-row gap-3 mb-5 px-5 md:px-10">
         <div className="md:w-[70%]  border border-slate-500 rounded-lg p-4">
           <Line options={options} data={data2} />
         </div>
@@ -179,6 +179,7 @@ const Dashboard = (props: Props) => {
           <Doughnut data={data3} />
         </div>
       </div>
+      
     </div>
   );
 };
