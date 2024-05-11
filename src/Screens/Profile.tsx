@@ -101,7 +101,7 @@ const Profile = (props: Props) => {
           </div>
         </div>
 
-        <div className="footer  mt-6   w-full py-4 ">
+        <div className="footer  mt-10   w-full py-4 ">
           <div className="flex  justify-end ">
             <div className="flex space-x-4 px-6">
               <button className="bg-[#374151] text-white font-bold w-20 py-2 rounded">
