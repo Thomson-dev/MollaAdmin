@@ -26,10 +26,10 @@ const ProductList = (props: Props) => {
         <div className="md:space-x-5 space-y-5 md:space-y-0 flex  md:flex-row flex-col">
           <input
             type="text"
-            className="rounded py-1 bg-[#1F2937] border pl-3 text-white border-slate-400  "
+            className="rounded py-2 bg-[#1F2937] border pl-3 text-white border-slate-400  "
             placeholder="Search Product "
           />
-          <button className="py-1 px-3 text-white rounded text-base bg-[#6366F1]">
+          <button className="py-2 px-3 text-white rounded text-base bg-[#6366F1]">
             Add Products
           </button>
         </div>
