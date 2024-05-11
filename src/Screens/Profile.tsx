@@ -19,7 +19,9 @@ const Profile = (props: Props) => {
     return wordCount < 3 && !isEmpty;
   };
 
-  const [imageSrc, setImageSrc] = useState("https://elstar.themenate.net/img/avatars/thumb-3.jpg"); // Default image source
+  const [imageSrc, setImageSrc] = useState(
+    "https://elstar.themenate.net/img/avatars/thumb-3.jpg"
+  ); // Default image source
 
   const handleImageChange = (e) => {
     const file = e.target.files[0]; // Get the selected file
@@ -33,7 +35,7 @@ const Profile = (props: Props) => {
   };
 
   return (
-    <div className="">
+    <div className="bg-[#1F2937]  h-screen">
       <h2 className="text-white  text-xl pt-5 font-semibold">General</h2>
       <p className="text-white mt-2 text-sm">
         Basic info, like your name and address that will displayed in public
@@ -46,11 +48,9 @@ const Profile = (props: Props) => {
               type="text"
               onChange={handleInputChange}
               placeholder="Name"
-              className={`{md:w-[40vw] w-[50vw]  px-9 text-white outline-none bg-[#1F2937] rounded-lg border py-2 ${
-                isEmpty ? "border-red-500 border-2" : "border-blue-500 border-2"
-              }  }`}
+              className={`{ md:w-[40vw] w-[70vw]  px-9 text-white outline-none bg-[#1F2937] rounded-lg border py-2   }`}
             />
-            <CgProfile className="absolute text-slate-500 text-xl left-3 top-4 " />
+            <CgProfile className="absolute text-slate-500 text-xl left-3 top-3 " />
             {/* {isTooShort() && (
               <p className="absolute top-12  text-red-500 text-sm">Too short</p>
             )} */}
@@ -64,11 +64,9 @@ const Profile = (props: Props) => {
               type="text"
               onChange={handleInputChange}
               placeholder="Email"
-              className={`{md:w-[40vw] w-[50vw]  px-9 text-white outline-none bg-[#1F2937] rounded-lg border py-2 ${
-                isEmpty ? "border-red-500 border-2" : "border-blue-500 border-2"
-              }  }`}
+              className={`{ md:w-[40vw] w-[70vw]  px-9 text-white outline-none bg-[#1F2937] rounded-lg border py-2  }`}
             />
-            <CiMail className="absolute text-slate-500 text-xl left-3 top-4 " />
+            <CiMail className="absolute text-slate-500 text-xl left-3 top-3 " />
             {/* {isTooShort() && (
               <p className="absolute top-12  text-red-500 text-sm">
                 Email required
@@ -77,7 +75,7 @@ const Profile = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex mt-11 border-b justify-between border-slate-600   items-center">
+        <div className="flex mt-11 border-b justify-between border-slate-600 md:pr-44 pr-28 items-center">
           <h3 className="text-white">Avatar</h3>
           <div>
             {/* Image preview */}
@@ -85,7 +83,7 @@ const Profile = (props: Props) => {
               <img
                 src={imageSrc}
                 alt="Preview"
-             className="w-20 h-20 rounded-full"
+                className="w-20 h-20 rounded-full"
               />
             )}
 
@@ -93,7 +91,7 @@ const Profile = (props: Props) => {
             <input
               type="file"
               accept="image/*"
-              className="mt-2"
+              className="mt-2 w-24 md:w-full"
               onChange={handleImageChange}
               style={{ marginBottom: "20px" }}
             />
@@ -103,21 +101,22 @@ const Profile = (props: Props) => {
           </div>
         </div>
 
-
         <div className="footer  mt-6   w-full py-4 ">
-        <div className="flex  justify-end ">
-          <div className="flex space-x-4 px-6">
-            <button className="bg-[#374151] w-20 py-2 rounded">Discard</button>
-
-            <div className="flex items-center">
-              <button className="bg-[#4F46E5] px-5 space-x-4 text-white font-semibold rounded py-2 flex items-center">
-                <IoIosSave className="text-white " />
-                Update
+          <div className="flex  justify-end ">
+            <div className="flex space-x-4 px-6">
+              <button className="bg-[#374151] text-white font-bold w-20 py-2 rounded">
+                Discard
               </button>
+
+              <div className="flex items-center">
+                <button className="bg-[#4F46E5] px-5 space-x-4 text-white font-semibold rounded py-2 flex items-center">
+                  <IoIosSave className="text-white " />
+                  Update
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   );

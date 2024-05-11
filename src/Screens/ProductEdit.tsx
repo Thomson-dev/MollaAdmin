@@ -116,7 +116,7 @@ const ProductEdit = (props: Props) => {
             </form>
           </div>
 
-          <div className="md:w-[40%] w-[100%]  flex  flex-col items-center   md:px-5 ">
+          <div className="md:w-[40%] w-[100%]  flex  flex-col md:items-center   md:px-5 ">
             <div className="">
               <h2 className="text-white  text-lg pt-5 font-semibold">
                 Add Image:
@@ -145,11 +145,11 @@ const ProductEdit = (props: Props) => {
       <div className="footer  mt-6   w-full py-4 ">
         <div className="flex  justify-end ">
           <div className="flex space-x-4 px-6">
-            <button className="bg-[#374151] w-20 py-2 rounded">Discard</button>
+            <button className="bg-[#374151] w-20 text-white font-bold py-2 rounded">Discard</button>
 
             <div className="flex items-center">
-              <button className="bg-[#4F46E5] px-5 rounded py-2 flex items-center">
-                <IoIosSave />
+              <button className="bg-[#4F46E5] text-white  px-5 rounded py-2 flex items-center">
+                <IoIosSave className="" />
                 Save
               </button>
             </div>

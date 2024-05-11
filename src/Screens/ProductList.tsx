@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../features/Products/getproductsSlice.ts";
 import Preloader from "../Components/Loader/Preloader.tsx";
 import { MdDelete } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
 
 type Props = {};
 
@@ -85,12 +86,17 @@ const ProductList = (props: Props) => {
                             alt=""
                           />
                         </th>
-                        <td className="px-3 py-3">{product.category}</td>
-                        <td className="px-3 py-3">{product.stock}</td>
-                        <td className="px-3 py-3">Dilivered</td>
-                        <td className="px-3 py-3">${product.price}</td>
-                        <td className="px-3 py-3">
+                        <td className="px-4 py-3">{product.category}</td>
+                        <td className="px-4 py-3">{product.stock}</td>
+                        <td className="px-4 py-3">Oreder</td>
+                        <td className="px-4 py-3">${product.price}</td>
+                        <td className="px-4 py-3">
+                          <div className="flex space-x-4 justify-center items-center">
+                            <CiEdit className="text-xl"/>
                           <MdDelete className="text-red-500 text-xl" />
+                          </div>
+                          
+                          
                         </td>
                       </tr>
                     ))}

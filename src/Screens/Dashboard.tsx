@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar.tsx";
+import { FiArrowUp } from "react-icons/fi";
+import { FiArrowDown } from "react-icons/fi";
 
 import {
   Chart as ChartJS,
@@ -108,6 +110,7 @@ const Dashboard = (props: Props) => {
       title: "Revenue",
       per: 11.4,
       id: "1",
+      icon: <FiArrowUp className="text-xl font-bold" />,
       amount: "$21,827.13",
       comparison: "vs. 3 months prior to Invalid Date",
     },
@@ -115,12 +118,14 @@ const Dashboard = (props: Props) => {
       title: "Orders",
       id: "2",
       amount: "1,758",
+      icon: <FiArrowDown className="text-xl font-bold" />,
       per: -3.2,
       comparison: "vs. 3 months prior to Invalid Date",
     },
     {
       title: "Purchases",
       amount: "$7,249.31",
+      icon: <FiArrowUp className="text-xl font-bold" />,
       id: "3",
       per: 5.7,
       comparison: "vs. 3 months prior to Invalid Date",
@@ -153,15 +158,32 @@ const Dashboard = (props: Props) => {
 
                 <div className="">
                   <p
-                    className={`text-sm text-white font-bold ${(item.id == "1"
-                      ? "text-green-600 bg-[#1C4646] px-5 py-1 rounded-full "
-                      : "")}
-                  ${(item.id == "2" ? "text-red-500 bg-[#492F3A] px-5 py-1 rounded-full  " : "")} 
-
-                  ${(item.id == "3" ? "text-green-500 bg-[#1C4646] px-5 py-1 rounded-full" : "")}
+                    className={`text-sm text-white font-bold ${
+                      item.id == "1"
+                        ? "text-green-600 bg-[#1C4646] px-5 py-1 rounded-full "
+                        : ""
+                    }
+                  ${
+                    item.id == "2"
+                      ? "text-red-500 bg-[#492F3A] px-5 py-1 rounded-full  "
+                      : ""
+                  }
+ 
+                  ${
+                    item.id == "3"
+                      ? "text-green-500 bg-[#1C4646] px-5 py-1 rounded-full"
+                      : ""
+                  }
                   `}
                   >
-                    {item.per}
+                    <div className={` flex items-center justify-center ${item.id == "1" ? "text-green-500": ""}   
+                     ${item.id == "2" ? "text-red-500": ""} 
+                     ${item.id == "3" ? "text-green-500": ""} 
+                    
+                    `}>
+                      {item.icon}
+                      {item.per}
+                    </div>
                   </p>
                 </div>
               </div>
@@ -179,7 +201,6 @@ const Dashboard = (props: Props) => {
           <Doughnut data={data3} />
         </div>
       </div>
-      
     </div>
   );
 };

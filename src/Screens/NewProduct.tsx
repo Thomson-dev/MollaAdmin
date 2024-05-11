@@ -5,13 +5,18 @@ import { IoIosSave } from "react-icons/io";
 type Props = {};
 
 const NewProduct = (props: Props) => {
-  const [file, setFile] = useState<string | undefined>(undefined);
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(e.target.files);
-    if (e.target.files && e.target.files.length > 0) {
-      setFile(URL.createObjectURL(e.target.files[0]));
+  const [imageSrc, setImageSrc] = useState('');
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageSrc(reader.result as string);
+      };
+      reader.readAsDataURL(file);
     }
-  }
+  };
 
   return (
     <div className="border bg-[#1F2937]  shadow-xl border-[#1F2937] ">
@@ -125,16 +130,16 @@ const NewProduct = (props: Props) => {
             </form>
           </div>
 
-          <div className="md:w-[40%] w-[100%]  flex  flex-col items-center   md:px-5 ">
+          <div className="md:w-[40%] w-[100%]  flex  flex-col md:items-center   md:px-5 ">
             <div className="">
-            <h2 className="text-white  text-lg pt-5 font-semibold">
-              Add Image:
-            </h2>
-            <p className="text-white text-sm">
-              Add or change image for the product
-            </p>
+              <h2 className="text-white  text-lg pt-5 font-semibold">
+                Add Image:
+              </h2>
+              <p className="text-white text-sm">
+                Add or change image for the product
+              </p>
             </div>
-            <form className="file-upload-form  flex justify-center items-center mt-5">
+            <div className="file-upload-form relative flex justify-center items-center mt-5">
               <label className="file-upload-label">
                 <div className="file-upload-design">
                   <svg viewBox="0 0 640 512" height="1em">
@@ -144,9 +149,18 @@ const NewProduct = (props: Props) => {
                   <p>or</p>
                   <span className="browse-button">Browse file</span>
                 </div>
-                <input id="file" type="file" />
+                <input
+                  id="file"
+                  type="file"
+                  onChange={handleFileChange}
+                  style={{ display: "none" }}
+                />
               </label>
-            </form>
+              <div className="">
+              {imageSrc && <img src={imageSrc} className="absolute left-0 top-0" alt="Preview" />}
+              </div>
+              
+            </div>
           </div>
         </div>
       </div>
@@ -154,11 +168,13 @@ const NewProduct = (props: Props) => {
       <div className="footer  mt-6   w-full py-4 ">
         <div className="flex  justify-end ">
           <div className="flex space-x-4 px-6">
-            <button className="bg-[#374151] w-20 py-2 rounded">Discard</button>
+            <button className="bg-[#374151] text-white font-bold w-20 py-2 rounded">
+              Discard
+            </button>
 
             <div className="flex items-center">
               <button className="bg-[#4F46E5] px-5 text-white font-semibold rounded py-2 flex items-center">
-                <IoIosSave className = 'text-white' />
+                <IoIosSave className="text-white" />
                 Save
               </button>
             </div>
