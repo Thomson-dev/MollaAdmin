@@ -35,7 +35,7 @@ const Profile = (props: Props) => {
   };
 
   return (
-    <div className="bg-[#1F2937]  h-screen">
+    <div className="bg-[#1F2937]  ">
       <h2 className="text-white  text-xl pt-5 font-semibold">General</h2>
       <p className="text-white mt-2 text-sm">
         Basic info, like your name and address that will displayed in public

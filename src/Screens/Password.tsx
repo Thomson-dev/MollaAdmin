@@ -4,7 +4,7 @@ type Props = {};
 
 function Password({}: Props) {
   return (
-    <div className="h-screen">
+    <div className="">
       <h2 className="text-white  text-xl pt-5 font-semibold">Password</h2>
       <p className="text-white mt-2 text-sm">
         Enter your current & new password to reset your password
