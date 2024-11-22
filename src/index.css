@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+} 
+
+
 .file-input-label {
     
     width: 200px; 
@@ -52,4 +62,12 @@
   }
   .browse-button:hover {
     background-color: rgb(14, 14, 14);
+  }
+
+  .login-background {
+    background-image: url('../src/asserts/graphic8.svg'); 
+    background-size: 650px ;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
   }

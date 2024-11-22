@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const sidebarItems = [
-    { id: 1, name: "Dashboard", url: "/", icon: <MdDashboard /> },
+    { id: 1, name: "Dashboard", url: "/dashboard", icon: <MdDashboard /> },
     {
       id: 2,
       name: "Product List",
@@ -18,15 +18,10 @@ const Sidebar = () => {
       icon: <MdOutlineProductionQuantityLimits />,
     },
 
-    {
-      id: 3,
-      name: "Product Edit",
-      url: "/product-edit",
-      icon: <CiEdit />,
-    },
+ 
     {
       id: 4,
-      name: "New Product ",
+      name: "Create Product ",
       url: "/new-product",
       icon: <MdAddShoppingCart />,
     },
@@ -34,28 +29,28 @@ const Sidebar = () => {
     {
       id: 5,
       name: "Order Details",
-      url: "/",
+      url: "/order",
       icon: <BsBagCheckFill />,
     },
-    { id: 6, name: "Settings", url: "/Settings", icon: <CiSettings /> },
+    // { id: 6, name: "Settings", url: "/Settings", icon: <CiSettings /> },
     // add more items as needed
   ];
   return (
-    <div className="shadow-md h-full w-[20%]  fixed  lg:px-4 md:px-2  ">
-      <div className="flex py-4 space-x-3 text-white items-center ">
+    <div className=" hidden fixed bg-white  shadow-md h-screen  lg:block w-64  p-8  ">
+      <div className="flex py-4 space-x-3 text-black items-center ">
         <MdOutlineShoppingCart className="text-2xl" />
-        <h1 className="text-xl">Mollar Store</h1>
+        <h1 className="text-xl"> Store</h1>
       </div>
-      <div className=" text-white mt-2 py-5 space-y-7   ">
+       <div className=" text-black mt-7 py-5 space-y-8   ">
         {sidebarItems.map((item) => (
           <div
             key={item.id}
-            className="flex space-x-2 hover:bg-[#29303D] py-1 rounded-sm  items-center cursor-pointer"
+            className="flex space-x-2  py-1 rounded-sm  items-center cursor-pointer"
           >
             <h6 className="text-2xl">{item.icon}</h6>
             <h1 className="text-lg">
-                {item.url && <Link to={item.url}>{item.name}</Link>}
-              </h1>
+              {item.url && <Link to={item.url}>{item.name}</Link>}
+            </h1>
           </div>
         ))}
       </div>

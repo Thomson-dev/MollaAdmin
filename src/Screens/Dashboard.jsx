@@ -1,5 +1,5 @@
-import React from "react";
-import Navbar from "../Components/Navbar.tsx";
+import React, { useState } from "react";
+import Navbar from "../Components/Navbar.js";
 import { FiArrowUp } from "react-icons/fi";
 import { FiArrowDown } from "react-icons/fi";
 
@@ -18,6 +18,8 @@ import {
 import { Doughnut } from "react-chartjs-2";
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { CgMenuRight } from "react-icons/cg";
 
 ChartJS.register(
   CategoryScale,
@@ -30,14 +32,12 @@ ChartJS.register(
   Legend
 );
 
-type Props = {};
-
-const Dashboard = (props: Props) => {
+const Dashboard = () => {
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: "top" as const,
+        position: "top",
       },
       title: {
         display: true,
@@ -83,6 +83,10 @@ const Dashboard = (props: Props) => {
     ],
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   const data2 = {
     labels,
     datasets: [
@@ -132,33 +136,33 @@ const Dashboard = (props: Props) => {
     },
   ];
   return (
-    <div className="">
-      <Navbar />
+    <div className="h-screen ">
+      <button onClick={toggleSidebar}>
+        <CgMenuRight className="text-2xl lg:hidden block" />
+      </button>
 
-      <div className="p-7">
-        <h2 className="text-2xl font-bold text-slate-100">Sales Overview</h2>
-        <p className="text-slate-200">View your current sales & summary</p>
+      <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+
+      <div className="my-5">
+        <h2 className="text-2xl font-bold ">Sales Overview</h2>
+        <p className="">View your current sales & summary</p>
       </div>
 
-      <div className="p-5 flex flex-col md:flex-row md:px-10  gap-3">
+      <div className="grid md:grid-cols-1 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-4">
         {data.map((item) => {
           return (
-            <div className=" flex-1  flex-col  border border-slate-500 p-5 py-7 rounded-lg  justify-between">
-              <div className=" flex flex-row items-center justify-between">
+            <div className="flex-1 flex-col  shadow-sm bg-white   p-5 py-8 rounded-lg justify-between">
+              <div className="flex  flex-row items-center justify-between">
                 <div className="">
-                  <p className="text-slate-200 font-semibold">{item.title}</p>
-                  <h3 className="text-2xl text-white font-bold">
-                    {item.amount}
-                  </h3>
+                  <p className=" font-semibold">{item.title}</p>
+                  <h3 className="text-2xl  font-bold">{item.amount}</h3>
 
-                  <p className="text-slate-200 text-base max-w-36">
-                    {item.comparison}
-                  </p>
+                  <p className=" text-base max-w-36">{item.comparison}</p>
                 </div>
 
                 <div className="">
                   <p
-                    className={`text-sm text-white font-bold ${
+                    className={`text-sm  font-bold ${
                       item.id == "1"
                         ? "text-green-600 bg-[#1C4646] px-5 py-1 rounded-full "
                         : ""
@@ -176,11 +180,15 @@ const Dashboard = (props: Props) => {
                   }
                   `}
                   >
-                    <div className={` flex items-center justify-center ${item.id == "1" ? "text-green-500": ""}   
-                     ${item.id == "2" ? "text-red-500": ""} 
-                     ${item.id == "3" ? "text-green-500": ""} 
+                    <div
+                      className={`flex items-center justify-center ${
+                        item.id == "1" ? "text-green-500" : ""
+                      }   
+                     ${item.id == "2" ? "text-red-500" : ""} 
+                     ${item.id == "3" ? "text-green-500" : ""} 
                     
-                    `}>
+                    `}
+                    >
                       {item.icon}
                       {item.per}
                     </div>
@@ -192,12 +200,12 @@ const Dashboard = (props: Props) => {
         })}
       </div>
 
-      <div className="grah flex flex-col   md:flex-row gap-3 mb-5 px-5 md:px-10">
-        <div className="md:w-[70%]  border border-slate-500 rounded-lg p-4">
+      <div className="grah flex flex-col md:flex-row gap-3 my-6">
+        <div className="w-full bg-white md:w-[70%] border rounded-lg p-4">
           <Line options={options} data={data2} />
         </div>
 
-        <div className="md:w-[30%]  border border-slate-500 rounded-lg p-4">
+        <div className="w-full md:w-[30%]  bg-white  rounded-lg p-4">
           <Doughnut data={data3} />
         </div>
       </div>

@@ -1,16 +1,19 @@
 import React from 'react';
-
+import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import './index.css';
 import ReactDOM from "react-dom/client";
-import store from "./store.ts";
+import store from "./store.js";
 import { Provider } from "react-redux";
-import App from './App.tsx';
+import App from './App.jsx';
+import { productApi } from './features/Products/apiSlice.js';
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
+ 
+  <ApiProvider api={productApi}>
     <App />
-  </Provider>
+  </ApiProvider>
+
 
 );
 

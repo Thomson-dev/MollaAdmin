@@ -3,9 +3,9 @@ import { CgProfile } from "react-icons/cg";
 import { CiMail } from "react-icons/ci";
 import { IoIosSave } from "react-icons/io";
 
-type Props = {};
 
-const Profile = (props: Props) => {
+
+const Profile = () => {
   const [inputValue, setInputValue] = useState("");
   const [isEmpty, setIsEmpty] = useState(true);
 
@@ -35,20 +35,20 @@ const Profile = (props: Props) => {
   };
 
   return (
-    <div className="bg-[#1F2937]  ">
-      <h2 className="text-white  text-xl pt-5 font-semibold">General</h2>
-      <p className="text-white mt-2 text-sm">
+    <div className="  ">
+      <h2 className="  text-xl pt-5 font-semibold">General</h2>
+      <p className=" mt-2 text-sm">
         Basic info, like your name and address that will displayed in public
       </p>
       <div className="flex flex-col">
         <div className="flex mt-11 border-b border-slate-600 pb-5 justify-between md:px items-center">
-          <h3 className="text-white">Name</h3>
+          <h3 className="">Name</h3>
           <div className="flex relative">
             <input
               type="text"
               onChange={handleInputChange}
               placeholder="Name"
-              className={`{ md:w-[40vw] w-[70vw]  px-9 text-white outline-none bg-[#1F2937] rounded-lg border py-2   }`}
+              className={`{ md:w-[40vw] w-[70vw]  px-9 text-white outline-none  py-3 rounded-lg border   }`}
             />
             <CgProfile className="absolute text-slate-500 text-xl left-3 top-3 " />
             {/* {isTooShort() && (
@@ -58,13 +58,13 @@ const Profile = (props: Props) => {
         </div>
 
         <div className="flex mt-11 border-b border-slate-600 pb-5 justify-between md:px items-center">
-          <h3 className="text-white">Email</h3>
+          <h3 className="">Email</h3>
           <div className="flex relative">
             <input
               type="text"
               onChange={handleInputChange}
               placeholder="Email"
-              className={`{ md:w-[40vw] w-[70vw]  px-9 text-white outline-none bg-[#1F2937] rounded-lg border py-2  }`}
+              className={`{ md:w-[40vw] w-[70vw]  px-9 text-white outline-none  rounded-lg border py-3  }`}
             />
             <CiMail className="absolute text-slate-500 text-xl left-3 top-3 " />
             {/* {isTooShort() && (
@@ -75,8 +75,8 @@ const Profile = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex mt-11 border-b justify-between border-slate-600 md:pr-44 pr-28 items-center">
-          <h3 className="text-white">Avatar</h3>
+        <div className="flex mt-11 border-b justify-between  md:pr-44 pr-28 items-center">
+          <h3 className="">Avatar</h3>
           <div>
             {/* Image preview */}
             {imageSrc && (

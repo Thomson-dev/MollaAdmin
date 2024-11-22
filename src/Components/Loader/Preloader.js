@@ -1,8 +1,8 @@
 import React from "react";
 import "./preloader.css";
-type Props = {};
 
-const Preloader = (props: Props) => {
+
+const Preloader = () => {
   return (
     <div className="flex items-center justify-center h-[80vh]">
       <div className="three-body">
