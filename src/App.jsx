@@ -5,7 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import ProductList from "./Screens/ProductList.js";
-import NewProduct from "./Screens/NewProduct.js";
+import NewProduct from "./Screens/NewProduct.jsx";
 import ProductEdit from "./Screens/ProductEdit.js";
 import Settings from "./Screens/Settings.js";
 import Login from "./Screens/Login.jsx";
@@ -30,11 +30,11 @@ function AppContent() {
   const isLoginPage = location.pathname === "/";
 
   return (
-    <div className=" bg-[#FAFAFA] w-full">
+    <div className="  w-full">
       <div className="flex flex-row">
         {!isLoginPage && <Sidebar />}
         <div
-          className={`flex-1 max-w-[1450px]  border border-red-500 h-screen mx-auto ${
+          className={`flex-1 max-w-[1500px]   min-h-screen mx-auto ${
             !isLoginPage ? "ml-0 lg:ml-64" : ""
           } p-6`}
         >

@@ -133,7 +133,7 @@ const OrderList = () => {
           </h1>
         </div>
       ) : (
-        <div className="w-[95%] max-w-[1450px] mx-auto">
+        <div className="">
           <div className="bg-[#008E97] z-0 rounded-md w-full mt-5 h-[10rem] rounded-b-lg">
             <div className="relative text-white">
               <div className="absolute w-full top-[6rem]">

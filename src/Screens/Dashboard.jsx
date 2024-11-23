@@ -151,7 +151,7 @@ const Dashboard = () => {
       <div className="grid md:grid-cols-1 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-4">
         {data.map((item) => {
           return (
-            <div className="flex-1 flex-col  shadow-sm bg-white   p-5 py-8 rounded-lg justify-between">
+            <div className="flex-1 flex-col  shadow-md bg-white   p-5 py-8 rounded-lg justify-between">
               <div className="flex  flex-row items-center justify-between">
                 <div className="">
                   <p className=" font-semibold">{item.title}</p>
@@ -160,7 +160,7 @@ const Dashboard = () => {
                   <p className=" text-base max-w-36">{item.comparison}</p>
                 </div>
 
-                <div className="">
+                {/* <div className="">
                   <p
                     className={`text-sm  font-bold ${
                       item.id == "1"
@@ -193,7 +193,7 @@ const Dashboard = () => {
                       {item.per}
                     </div>
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           );

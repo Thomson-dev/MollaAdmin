@@ -64,10 +64,10 @@
     background-color: rgb(14, 14, 14);
   }
 
-  .login-background {
+  /* .login-background {
     background-image: url('../src/asserts/graphic8.svg'); 
     background-size: 650px ;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-  }
+  } */

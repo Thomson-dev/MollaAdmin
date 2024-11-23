@@ -274,15 +274,15 @@ const NewProduct = () => {
                   />
                 </label>
               </div>
-              {imageFileUrl && (
-                <div className="mt-4">
-                  <img
-                    src={imageFileUrl || (formData && formData.image)}
-                    alt="Preview"
-                    className="aspect-square"
-                  />
-                </div>
-              )}
+              {imageFileUploading && <span>Uploading...</span>} 
+              {formData.image && (
+              <img
+              
+                src={formData.image}
+                alt="upload"
+                className=" aspect-square mt-5 h-auto object-cover"
+              />
+            )}
             </div>
           </div>
         </div>
@@ -306,6 +306,7 @@ const NewProduct = () => {
           </div>
         </div>
       </form>
+     
     </div>
   );
 };

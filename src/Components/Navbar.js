@@ -44,7 +44,7 @@ const Navbar = ({ isOpen, toggleSidebar }) => {
   return (
     <>
     <div
-      className={`lg:w-[300px] w-[250px] min-h-screen lg:hidden z-50 h-screen fixed bg-white ${
+      className={`lg:w-[300px] w-[250px] h-full lg:hidden z-50  fixed bg-white ${
         isOpen ? "left-[0rem] duration-1000 delay-75" : "-left-[30rem] duration-1000 delay-75"
       } top-0`}
     >
