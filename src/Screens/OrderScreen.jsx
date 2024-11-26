@@ -32,19 +32,13 @@ const navLinks = [
 
   {
     id: 3,
-    name: "Product Edit",
-    url: "/product-edit",
-    icon: <CiEdit />,
-  },
-  {
-    id: 4,
     name: "New Product ",
     url: "/new-product",
     icon: <MdAddShoppingCart />,
   },
 
   {
-    id: 5,
+    id: 4,
     name: "Order Details",
     url: "/order",
     icon: <BsBagCheckFill />,
@@ -53,8 +47,8 @@ const navLinks = [
   // add more items as needed
 ];
 const OrderList = () => {
-  
   const { data: orders, error, isLoading: loading } = useGetAllOrdersQuery();
+  console.log(orders);
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -93,37 +87,8 @@ const OrderList = () => {
           />
         </div>
       </div>
-      {isOpen && (
-        <div
-          onClick={toggleSidebar}
-          className="postion overlay lg:hidden fixed z-30 top-0 left-0 w-full h-full bg-[#00000080]"
-        ></div>
-      )}
-      <div
-        className={`lg:w-[300px] w-[250px] lg:hidden z-50 h-screen fixed  bg-white ${
-          isOpen
-            ? "left-[0rem] duration-1000 delay-75"
-            : "-left-[30rem] duration-1000 delay-75"
-        } top-0`}
-      >
-        <div className=" text-black mt-7 py-5 px-5 space-y-8   ">
-          <div className="flex py-4 space-x-3 text-black items-center ">
-            <MdOutlineShoppingCart className="text-2xl" />
-            <h1 className="text-xl"> Store</h1>
-          </div>
-          {navLinks.map((item) => (
-            <div
-              key={item.id}
-              className="flex space-x-2  py-1 rounded-sm  items-center cursor-pointer"
-            >
-              <h6 className="text-2xl">{item.icon}</h6>
-              <h1 className="text-lg">
-                {item.url && <Link to={item.url}>{item.name}</Link>}
-              </h1>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+
       {loading ? (
         <Preloader />
       ) : error ? (
@@ -155,6 +120,12 @@ const OrderList = () => {
                                 Customer Name
                               </th>
                               <th className="px-4 py-2 text-base whitespace-nowrap">
+                                Phone Number
+                              </th>
+                              <th className="px-4 py-2 text-base whitespace-nowrap">
+                                Address
+                              </th>
+                              <th className="px-4 py-2 text-base whitespace-nowrap">
                                 Products
                               </th>
                               <th className="px-4 py-2 text-base whitespace-nowrap">
@@ -174,8 +145,19 @@ const OrderList = () => {
                                 <td className="px-4 text-center font-semibold text-base py-2 whitespace-nowrap">
                                   {order._id}
                                 </td>
-                                <td className="px-4 text-lg text-center py-2 whitespace-nowrap">
+                                <td className="px-4 text-base text-center py-2 whitespace-nowrap">
                                   {order.shippingAddress.name}
+                                </td>
+
+                                <td className="px-4 text-base text-center py-2 whitespace-nowrap">
+                                  {order.shippingAddress.mobileNo}
+                                </td>
+
+                                <td className="px-4 text-base text-center py-2 whitespace-nowrap">
+                                  {order.shippingAddress.houseNo},{" "}
+                                  {order.shippingAddress.street},{" "}
+                                  {order.shippingAddress.landmark},{" "}
+                                  {order.shippingAddress.postalCode}
                                 </td>
                                 <td className="px-4 text-base text-center py-2 whitespace-nowrap">
                                   {order.products.map((product, index) => (
@@ -189,12 +171,15 @@ const OrderList = () => {
                                   ))}
                                 </td>
                                 <td className="px-4 text-base text-center py-2 whitespace-nowrap">
-                                  ${order.totalPrice}
+                                  {new Intl.NumberFormat("en-US", {
+                                    style: "currency",
+                                    currency: "USD",
+                                  }).format(order.totalPrice)}
                                 </td>
-                                <td className="py-2 text-center text-lg font-bold whitespace-nowrap">
+                                <td className="py-2 text-center text-base font-bold whitespace-nowrap">
                                   {order.paymentMethod}
                                 </td>
-                                <td className="py-2 text-center text-lg whitespace-nowrap">
+                                <td className="py-2 text-center text-base whitespace-nowrap">
                                   {new Date(
                                     order.createdAt
                                   ).toLocaleDateString()}

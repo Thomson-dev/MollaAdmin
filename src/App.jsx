@@ -36,7 +36,7 @@ function AppContent() {
         <div
           className={`flex-1 max-w-[1500px]   min-h-screen mx-auto ${
             !isLoginPage ? "ml-0 lg:ml-64" : ""
-          } p-6`}
+          } md:p-6 p-2 `}
         >
           <Routes>
             <Route path="/" element={<Login />} />

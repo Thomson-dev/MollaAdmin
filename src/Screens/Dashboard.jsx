@@ -136,14 +136,14 @@ const Dashboard = () => {
     },
   ];
   return (
-    <div className="h-screen ">
+    <div className="h-screen">
       <button onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>
 
       <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
-      <div className="my-5">
+      <div className=" m-4">
         <h2 className="text-2xl font-bold ">Sales Overview</h2>
         <p className="">View your current sales & summary</p>
       </div>

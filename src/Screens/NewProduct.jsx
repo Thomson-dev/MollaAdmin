@@ -32,7 +32,8 @@ const NewProduct = () => {
   const [imageFileUrl, setImageFileUrl] = useState(null);
   const [imageFileUploadError, setImageFileUploadError] = useState(null);
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
-  const [imageFileUploading, setImageFileUploading] = useState(false);
+  const [imageFileUploading, setImageFileUploading] = useState(true);
+  
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleSidebar = () => {
@@ -124,11 +125,11 @@ const NewProduct = () => {
 
       <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
       <ToastContainer />
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+      <form onSubmit={handleSubmit} className="flex flex-col  space-y-4">
         <div className="pt-4">
           <h3 className="text-black font-bold mb-5 text-xl">Add New Product</h3>
-          <div className="flex gap-7 md:flex-row flex-col">
-            <div className="md:w-[60%] shadow bg-white p-10 w-[100%]">
+          <div className=" gap-7 grid md:grid-cols-2 grid-cols-1 ">
+            <div className=" shadow bg-white md:p-10 p-5 ">
               <h6 className="text-black text-lg font-semibold">
                 Basic Information
               </h6>
@@ -211,7 +212,7 @@ const NewProduct = () => {
                         <option value="Gadgets">Gadgets</option>
                       </select>
                     </div>
-                    <div className="flex w-[50%] flex-col">
+                    <div className="flex  flex-col">
                       <label className="text-base font-semibold">Size</label>
                       <select
                         // id="size"
@@ -230,7 +231,7 @@ const NewProduct = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-[40%] bg-white h-fit shadow-md w-[100%] flex flex-col p-7 md:px-5">
+            <div className=" bg-white h-fit shadow-md  flex flex-col p-7 md:px-5">
               <div className="">
                 <h2 className="text-lg pt-5 font-semibold">Add Image:</h2>
                 <p className="text-sm">Add or change image for the product</p>
@@ -274,15 +275,28 @@ const NewProduct = () => {
                   />
                 </label>
               </div>
-              {imageFileUploading && <span>Uploading...</span>} 
-              {formData.image && (
-              <img
               
-                src={formData.image}
-                alt="upload"
-                className=" aspect-square mt-5 h-auto object-cover"
-              />
-            )}
+              {imageFileUploading && (
+                <div className="mt-4">
+                  <p>Uploading: {imageFileUploadProgress}%</p>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div
+                      className="bg-blue-600 h-2.5 rounded-full"
+                      style={{ width: `${imageFileUploadProgress}%` }}
+                    ></div>
+                  </div>
+                </div>
+              )}
+
+              {formData.image && (
+                <div className="mt-4">
+                  <img
+                    src={formData.image}
+                    alt="upload"
+                    className="aspect-square mt-5 h-auto object-cover"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -306,7 +320,6 @@ const NewProduct = () => {
           </div>
         </div>
       </form>
-     
     </div>
   );
 };
