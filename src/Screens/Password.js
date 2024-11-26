@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = {};
 
-function Password({}: Props) {
+
+function Password() {
   return (
     <div className="">
       <h2 className="text-white  text-xl pt-5 font-semibold">Password</h2>

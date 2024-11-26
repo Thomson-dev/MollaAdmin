@@ -6,10 +6,11 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
 import { BsBagCheckFill } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Sidebar = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const logout = () => {
     localStorage.removeItem("token");
@@ -48,14 +49,19 @@ const Sidebar = () => {
         <div>
           <div className="flex py-4 space-x-3 text-black items-center ">
             <MdOutlineShoppingCart className="text-2xl" />
-            <h1 className="text-xl"> Store</h1>
+            <h1 className="text-xl">FASTGAK Store </h1>
           </div>
 
           <div className=" text-black mt-7 py-5 space-y-8   ">
             {sidebarItems.map((item) => (
               <div
                 key={item.id}
-                className="flex space-x-2  py-1 rounded-sm  items-center cursor-pointer"
+                className={`flex space-x-2 py-1 rounded-sm items-center cursor-pointer ${
+                  location.pathname === item.url
+                    ? " text-[#008E97] "
+                    : ""
+                }`}
+         
               >
                 <h6 className="text-2xl">{item.icon}</h6>
                 <h1 className="text-lg">

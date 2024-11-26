@@ -137,13 +137,13 @@ const Dashboard = () => {
   ];
   return (
     <div className="h-screen">
-      <button onClick={toggleSidebar}>
+      <button className="p-4" onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>
 
       <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
-      <div className=" m-4">
+      <div className=" m-6">
         <h2 className="text-2xl font-bold ">Sales Overview</h2>
         <p className="">View your current sales & summary</p>
       </div>
@@ -151,7 +151,7 @@ const Dashboard = () => {
       <div className="grid md:grid-cols-1 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-4">
         {data.map((item) => {
           return (
-            <div className="flex-1 flex-col  shadow-md bg-white   p-5 py-8 rounded-lg justify-between">
+            <div className="flex-1 flex-col  shadow bg-[#F9FAFB]   p-5 py-8 rounded-lg justify-between">
               <div className="flex  flex-row items-center justify-between">
                 <div className="">
                   <p className=" font-semibold">{item.title}</p>

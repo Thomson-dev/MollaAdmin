@@ -164,7 +164,7 @@ const ProductList = () => {
 
   return (
     <div className="product-list-container">
-        <button onClick={toggleSidebar}>
+        <button className="p-4" onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>
       <Navbar isOpen={isOpen} toggleSidebar={toggleSidebar} />

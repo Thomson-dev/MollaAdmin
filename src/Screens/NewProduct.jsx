@@ -119,7 +119,7 @@ const NewProduct = () => {
 
   return (
     <div className="">
-      <button onClick={toggleSidebar}>
+      <button className="p-4" onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>
 

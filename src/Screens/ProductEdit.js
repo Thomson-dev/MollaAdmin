@@ -153,7 +153,7 @@ console.log(isError)
 
   return (
     <div className="max-w-full w-full">
-         <button onClick={toggleSidebar}>
+         <button className="p-4" onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>
 
