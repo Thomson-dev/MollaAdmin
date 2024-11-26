@@ -136,7 +136,7 @@ const Dashboard = () => {
     },
   ];
   return (
-    <div className="h-screen">
+    <div className="h-screen  max-w-[1500px] w-[95%] mx-auto">
       <button className="p-4" onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>

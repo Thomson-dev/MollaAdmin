@@ -72,7 +72,7 @@ const OrderList = () => {
   };
 
   return (
-    <div className="order-list-container">
+    <div className="max-w-[1500px] w-[95%] mx-auto">
       <div className="">
         <button className="p-4" onClick={toggleSidebar}>
           <CgMenuRight className="text-2xl lg:hidden block" />

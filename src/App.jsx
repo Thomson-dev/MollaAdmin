@@ -34,7 +34,7 @@ function AppContent() {
       <div className="flex flex-row">
         {!isLoginPage && <Sidebar />}
         <div
-          className={`flex-1 max-w-[1500px]   min-h-screen mx-auto ${
+          className={`flex-1 max-w-[1500px] w-[95%]  min-h-screen mx-auto ${
             !isLoginPage ? "ml-0 lg:ml-64" : ""
           } md:p-6 p-2 `}
         >

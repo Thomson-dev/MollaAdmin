@@ -214,9 +214,7 @@ const ProductList = () => {
                               <th className="px-4 py-2 text-base whitespace-nowrap">
                                 Price
                               </th>
-                              <th className="px-4 py-2 text-base whitespace-nowrap">
-                                Stock
-                              </th>
+                              
                               <th className="px-4 py-2 text-base whitespace-nowrap">
                                 Delete
                               </th>
@@ -237,15 +235,7 @@ const ProductList = () => {
                                 <td className="px-4 text-base text-center py-2 whitespace-nowrap">
                                   ${product.price}
                                 </td>
-                                <td className="px-4 text-base text-center py-2 whitespace-nowrap">
-                                  {product.countInStock ? (
-                                    <span className="text-green-600">
-                                      In Stock
-                                    </span>
-                                  ) : (
-                                    "Out of Stock"
-                                  )}
-                                </td>
+                              
                                 <td className="py-2 text-center whitespace-nowrap">
                                   <button
                                     onClick={() => toggleModal(product._id)}

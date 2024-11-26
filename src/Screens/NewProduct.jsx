@@ -118,7 +118,7 @@ const NewProduct = () => {
   }, [imageFile]);
 
   return (
-    <div className="">
+    <div className="max-w-[1500px] w-[95%] mx-auto">
       <button className="p-4" onClick={toggleSidebar}>
         <CgMenuRight className="text-2xl lg:hidden block" />
       </button>

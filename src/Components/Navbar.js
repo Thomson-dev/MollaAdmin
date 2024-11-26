@@ -62,20 +62,17 @@ const Navbar = ({ isOpen, toggleSidebar }) => {
               <h1 className="text-xl">FASTGAK Store</h1>
             </div>
 
-            <div className="text-black mt-7 py-5 space-y-8">
+            <div className="text-black mt-7 py-5 space-y-5">
               {navLinks.map((item) => (
                 <div
                   key={item.id}
                   className={`flex space-x-2 py-1 rounded-sm items-center cursor-pointer ${
-                    location.pathname === item.url
-                      ? " text-[#008E97] "
-                      : ""
+                    location.pathname === item.url ? " text-[#008E97] " : ""
                   }`}
                 >
                   <h6 className="text-2xl">{item.icon}</h6>
-                  <h1 className="text-lg">
-                    {item.url && <Link to={item.url}>{item.name}</Link>}
-                  </h1>
+
+                  {item.url && <Link to={item.url}>{item.name}</Link>}
                 </div>
               ))}
             </div>
